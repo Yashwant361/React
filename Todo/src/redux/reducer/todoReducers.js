@@ -18,6 +18,7 @@ const todoReducer = (state = initialState, action) => {
         ),
       };
 
+      
     case TOGGLE_TODO:
       return {
         ...state,
