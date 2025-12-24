@@ -1,10 +1,7 @@
-name: React Todo CI
+name: React CI
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
     branches:
       - main
 
@@ -13,28 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout code from GitHub
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      # Step 2: Setup Node.js environment
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: npm
 
-      # Step 3: Install dependencies
-      - name: Install dependencies
+      - name: Install deps
         run: npm install
 
-      # Step 4: Run tests (safe for beginners)
-      - name: Skip tests
-        run: echo "No tests added yet"
-
-        env:
-          CI: true
-
-      # Step 5: Build React app
-      - name: Build project
+      - name: Build
         run: npm run build
