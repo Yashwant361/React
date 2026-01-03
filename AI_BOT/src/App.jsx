@@ -1,5 +1,5 @@
 import { ExternalLink, Send } from 'lucide-react';
-import { BASE_URL, GROQ_API_KEY } from './contentapi/constant';
+import { BASE_URL, GROQ_API_KEY } from './contentapi/constant.js';
 import React, { useState } from 'react';
 
 const App = () => {
